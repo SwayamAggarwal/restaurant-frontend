@@ -4,6 +4,7 @@ import axios from "axios"
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 import{useNavigate} from "react-router-dom"
+import config from '../config'
 
 const Reservation = () => {
     const[firstName, setFirstName] = useState("")
@@ -17,12 +18,15 @@ const Reservation = () => {
     const handleReservation = async(e) => {         // e = event
         e.preventDefault();
         try {
-            const {data} = await axios.post("http://localhost:3000/api/v1/reservation/send",{firstName,lastName,email,phone,time,date},{
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                withCredentials: true
-            });
+            const {data} = await axios.post(`${config.apiUrl}/reservation/send`,
+                {firstName,lastName,email,phone,time,date},
+                {
+                    headers:{
+                        "Content-Type":"application/json"
+                    },
+                    withCredentials: true
+                }
+            );
            
             toast.success(data.message);
             setFirstName("");
@@ -33,7 +37,7 @@ const Reservation = () => {
             setDate("");
             navigate("/success");
         } catch (error) {
-            toast.error(error);
+            toast.error(error.response?.data?.message || "An error occurred");
         }
     }
 

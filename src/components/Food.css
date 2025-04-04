@@ -1,0 +1,84 @@
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.menu-header h1 {
+  color: #d35400;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.menu-header p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.menu-section {
+  margin-bottom: 40px;
+}
+
+.menu-section h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #d35400;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.menu-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #d35400;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-price {
+  color: #16a085;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.item-description {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .menu-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-header h1 {
+    font-size: 2rem;
+  }
+}

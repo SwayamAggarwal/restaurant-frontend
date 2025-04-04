@@ -5,7 +5,7 @@ import {Toaster} from "react-hot-toast";
 import Home from './Pages/Home';
 import Success from './Pages/Success';
 import NotFound from './Pages/NotFound';
-
+import FoodList from './Pages/FoodList';
 // swayam
 
 const App = () =>{
@@ -15,6 +15,7 @@ const App = () =>{
         <Route path="/" element={< Home />} />
         <Route path="/success" element={<Success />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/foodList" element={<FoodList />} />
       </Routes>
       <Toaster/>
     </Router>
